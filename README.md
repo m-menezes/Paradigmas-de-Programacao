@@ -22,5 +22,5 @@
 <br>
 
 ## Trabalhos
-- [Trabalho 1](https://github.com/m3nezes/paradigmas/blob/master/Trabalhos/t1/trabalho1.py)
+- [Trabalho 1](https://github.com/m3nezes/paradigmas/blob/master/t1/trabalho1.py)
 <br>
