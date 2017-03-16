@@ -44,6 +44,10 @@ def ex8(n):
     return filter(somentepares,n)
 
 #ex:9
+def charFound(c,s):
+    def charAux(s):
+        return c==s
+    return(len(filter(charAux,s))>0)
 
 #ex:10
 def addhtml(lis):
