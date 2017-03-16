@@ -20,5 +20,5 @@
     >>> funcoes.soma25(5)
 ```
 ## Trabalhos
-- [Trabalho 1](https://github.com/m3nezes/paradigmas/blob/master/t1/trabalho1.py)
+- [Trabalho 1](https://github.com/m3nezes/paradigmas/tree/master/t1)
 <br>
