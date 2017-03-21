@@ -1,7 +1,6 @@
 # Paradigmas de Programação - Primeiro semestre de 2017
 
 >Nome: **Marcelo Menezes**<br>
->Email: m.silva@inf.ufsm.br<br>
 >Professora - **Andrea Schwertner Charão**<br>
 >Link Disciplina - [ELC117](https://github.com/AndreaInfUFSM/elc117-2017a)
 
