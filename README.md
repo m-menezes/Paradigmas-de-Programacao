@@ -20,4 +20,6 @@
 ```
 ## Trabalhos
 - [Trabalho 1](https://github.com/m3nezes/paradigmas/tree/master/t1)
-<br>
+
+## Links Uteis
+- [Brincando com Listas](https://pythonhelp.wordpress.com/2013/06/26/brincando-com-listas/)
