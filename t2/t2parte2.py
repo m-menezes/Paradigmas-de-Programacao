@@ -9,11 +9,13 @@ from random import randint
    - aplica os estilos aos retangulos, gerando uma lista com todos os dados para o SVG
    - coloca os dados no formato SVG, concatenando strings
 '''
-#retorna um numero random de 0 a 255 (padrao rgb)
+
 def random():
    return str(randint(0,255))
+
 def randomrgb(n):
    return ["fill:rgb("+random()+","+random()+","+random()+")" for n in range(n)]
+
 def svgRect(rs):
    (((x,y),w,h),style) = rs
    return "<rect x='%.3f' y='%.3f' width='%.2f' height='%.2f' style='%s'/>\n" % (x,y,w,h,style)
@@ -25,7 +27,6 @@ def svgImage(w, h, rs):
 def applyStyles(rects, styles):
    return list(zip(rects, itertools.cycle(styles)))
 
-# TODO: modifique essa funcao para gerar mais retangulos
 def genRects(n, w, h):
    return [((x*50,0),w,h) for x in list(reversed(range(n)))]
 
