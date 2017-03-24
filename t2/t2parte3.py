@@ -15,8 +15,8 @@ ascii = [' ','!','"','#','$','%','&',"'",'(',')','*','+',',','-','.','/','0','1'
 
    
 def hexascii(texto):
-   textofiltro = "".join([texto[x]for x in range((texto.find(':')+2),texto.find('-->')-1)])
-   aux = textofiltro.split(' ')
+   textofiltro = "".join([texto[x]for x in range((texto.find('<!--')),texto.find('-->'))])
+   aux = textofiltro.split() ##sem delimitador para cortar o \n alem de espaco
    return ''.join([ascii[y] for x in range(len(aux)) for y in range(len(ascii)) if aux[x] == hexadecimal[y]])
 
    
