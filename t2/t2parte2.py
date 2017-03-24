@@ -12,7 +12,8 @@ from random import randint
 #retorna um numero random de 0 a 255 (padrao rgb)
 def random():
    return str(randint(0,255))
-
+def randomrgb(n):
+   return ["fill:rgb("+random()+","+random()+","+random()+")" for n in range(n)]
 def svgRect(rs):
    (((x,y),w,h),style) = rs
    return "<rect x='%.3f' y='%.3f' width='%.2f' height='%.2f' style='%s'/>\n" % (x,y,w,h,style)
@@ -39,7 +40,7 @@ def main():
    n = 10
    rects = genRects(n,50,50)
    #cria uma lista de str contendo os valores rgb
-   styles = ["fill:rgb("+random()+","+random()+","+random()+")" for n in range(n)]
+   styles = randomrgb(n)
    rectstyles = applyStyles(rects, styles)
    writeFile("mycolors.svg", svgImage(maxWidth, maxHeight, rectstyles))
    
