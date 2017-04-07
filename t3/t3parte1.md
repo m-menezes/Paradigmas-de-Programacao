@@ -1,11 +1,35 @@
-?- trace.					- Chamada da funÁ„o trace
-true.						- Trace ON
+## Trabalho 3: Predicados em Prolog
 
-[trace]  ?- avo(joao,Y).			- Chamada da funÁ„o avo
-   Call: (8) avo(joao, _584) ? creep		- Substitui Y como uma variavel unica _584
-   Call: (9) pai(joao, _802) ? creep		- Chamada da funÁ„o pai e criaÁ„o da variavel _802
-   Exit: (9) pai(joao, jose) ? creep		- Encontrou algum valor compativel com a regra da funÁ„o "pai(joao, X)"
-   Call: (9) pai(jose, _584) ? creep		- Chamada da funÁ„o pai para verificar se o valor compativel È pai de algum outro valor
-   Fail: (9) pai(jose, _584) ? creep		- Sem valor compativel "pai(jose, Z)"
-   Fail: (8) avo(joao, _584) ? creep		- Sem valor compativel "avo(joao, Y)"
-false.						- Retorno da funÁ„o avo
+*Considere a seguinte base de fatos e regras:*
+
+```prolog
+pai(roberto,joao).
+pai(joao, jose).
+pai(roberto,julio).
+pai(julio,marcos).
+pai(julio,mario).
+avo(X,Z) :- pai(X,Y), pai(Y,Z).
+```
+*Mostre o trace comentado das consultas:*
+```prolog
+?- avo(joao,Y).
+false.
+?- avo(roberto,Y).
+Y = jose ;
+Y = marcos ;
+Y = mario.
+```
+*Execu√ß√£o:*
+
+Codigo | Coment√°rio
+---------- | ----------
+```?- trace. ```| Chamada da fun√ß√£o trace
+```true.```| Trace ON
+```[trace]  ?- avo(joao,Y). ```| Chamada da fun√ß√£o avo
+```   Call: (8) avo(joao, _584) ? creep ```| Substitui Y como uma variavel unica _584
+```   Call: (9) pai(joao, _802) ? creep ```| Chamada da fun√ß√£o pai e cria√ß√£o da variavel _802
+```   Exit: (9) pai(joao, jose) ? creep ```| Encontrou algum valor compativel com a regra da fun√ß√£o "pai(joao, X)"
+```   Call: (9) pai(jose, _584) ? creep ```| Chamada da fun√ß√£o pai para verificar se o valor compativel √© pai de algum outro valor
+```   Fail: (9) pai(jose, _584) ? creep ```| Sem valor compativel "pai(jose, Z)"
+```   Fail: (8) avo(joao, _584) ? creep ```| Sem valor compativel "avo(joao, Y)"
+``` false. ``` | Retorno da fun√ß√£o avo
