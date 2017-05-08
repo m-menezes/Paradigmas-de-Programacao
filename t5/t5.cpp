@@ -21,31 +21,34 @@ public:
 	string getAtividadeNome() {
 		return atividadeNome;
 	}
-	string getAtividadePontos() {
+	int getAtividadePontos() {
 		return atividadePontos;
 	}
-	int getPontosTotal() {
-		return pontosTotal;
-	}
-}
+};
 
 class Jogador {
 private:
 	string nome;		// nome
 	vector<Score> pontuacao; 	// pontuacao/atividade
-	int pontosTotal; 	// total de pontos jogador
+	int pontosTotal = 0 ; 	// total de pontos jogador
 public:
 	Jogador(string nome, string atividade, int pontos) {
 		this->nome = nome;
-		this->pontuacaoTotal(int pontos);
+		this->pontuacaoTotal(pontos);
 		Score(atividade, pontos);
 	}
 	Jogador(string atividade, int pontos) {
-		this->pontuacaoTotal(int pontos);
+		this->pontuacaoTotal(pontos);
 		Score(atividade, pontos);
+	}
+	setNome(string nome){
+		this->nome = nome;
 	}
 	string getNome() {
 		return nome;
+	}
+	int getPontos(){
+		return pontosTotal;
 	}
 	pontuacaoTotal(int pontos){
 		this->pontosTotal += pontos;
@@ -57,6 +60,8 @@ int main(){
 	string nome;
 	string atividade;
 	string pontos;
+	int contador = 0;
+	int score;
 	vector<Jogador> jogador;
 
 	//Arquivo com pontuacao
@@ -66,18 +71,17 @@ int main(){
 		getline(linestream, nome, ',');//NOME
 		getline(linestream, atividade, ',');//ATIVIDADE
 		getline(linestream, pontos, ',');//SCORE
+		score = stoi(pontos);//Conversao para int
 
-		auto score = stoi(pontos);//Conversao para int
-		while(auto i: jogador){
-			// se for ja existe jogador so acrescenta atividade e score
-			if(nome.compare(Jogador->getNome)==0){
-				Jogador(atividade, score);
-			}
-			else{
-				Jogador(nome, atividade, score);
-			}
-		}
+		jogador.push_back(Jogador(nome, atividade, score));
 	}
+
+	vector<Jogador>::iterator it;
+	for (it = jogador.begin(); it < jogador.end(); it++){
+		cout<< it->getNome() << " ";
+		cout<< it->getPontos() << " "<< endl;
+	}
+
 	///LARGUEI DE MÃO
 	///FAZER TUDO PRA TIRAR NOTA RUIM MESMO :)
 }
