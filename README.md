@@ -30,12 +30,12 @@
 
 ```
 ## Trabalhos
-#####Python
+##### Python
 - [Trabalho 1](https://github.com/m3nezes/paradigmas/tree/master/t1)
 - [Trabalho 2](https://github.com/m3nezes/paradigmas/tree/master/t2)
-#####Prolog
+##### Prolog
 - [Trabalho 3](https://github.com/m3nezes/paradigmas/tree/master/t3)
-#####C++
+##### C++
 - [Trabalho 4](https://github.com/m3nezes/paradigmas/tree/master/t4)
 - [Trabalho 5](https://github.com/m3nezes/paradigmas/tree/master/t5)
 - [Trabalho 6](https://github.com/m3nezes/paradigmas/tree/master/t6)
