@@ -8,8 +8,18 @@ using namespace std;
 
 class Forma {
 public:
-	virtual double custo() const = 0;
 	virtual double getArea() const = 0;
+	virtual double custo() const {
+		if(this->getArea() > 7){
+			return 5.00;
+		}
+		if(this->getArea() <= 7 && this->getArea() >= 4){
+			return 2.50;
+		}
+		if(this->getArea() < 4){
+			return 1.25;
+		}
+	}
 };
 
 
@@ -26,17 +36,6 @@ public:
 	virtual double getArea() const{
 		return this->area;
 	}
-	virtual double custo() const {
-		if(area > 7){
-			return 5.00;
-		}
-		if(area <= 7 && area >= 4){
-			return 2.50;
-		}
-		if(area < 4){
-			return 1.25;
-		}
-	}
 };
 
 class circulo: public Forma{
@@ -51,17 +50,6 @@ public:
 	double getArea() const{
 		return this->area;
 	}
-	virtual double custo() const {
-		if(area > 7){
-			return 5.00;
-		}
-		if(area <= 7 && area >= 4){
-			return 2.50;
-		}
-		if(area < 4){
-			return 1.25;
-		}
-	}
 };
 
 class triangulo: public Forma{
@@ -75,17 +63,6 @@ public:
 	}
 	double getArea() const{
 		return this->area;
-	}	
-	virtual double custo() const {
-		if(area > 7){
-			return 5.00;
-		}
-		if(area <= 7 && area >= 4){
-			return 2.50;
-		}
-		if(area < 4){
-			return 1.25;
-		}
 	}
 };
 
