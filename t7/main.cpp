@@ -7,10 +7,10 @@
 #include "window.h"
 
 using namespace std;
-vector<int> array;
 
 class randomPeople : public UserInterface {
 private:
+	vector<int> array;
 	int flag = 0;
 public:
 	randomPeople() {
@@ -37,7 +37,7 @@ public:
 		gui->resultado->label("");
 		gui->nGanhador->copy_label(to_string(0).c_str());
 		gui->flag = 0;
-		array.clear();
+		gui->array.clear();
 	}
 
   // Funcao chamada quando pressionado botao sortear
@@ -46,31 +46,31 @@ public:
 		try {
 			if(gui->flag == 0){
 			//desativar modificação de valor numero de participantes ate clicar em reset
-			gui->participantes->deactivate();
-			gui->reset->activate();
+				gui->participantes->deactivate();
+				gui->reset->activate();
 			//receber valor numero de participantes
-			int max = stoi(gui->participantes->value());
+				int max = stoi(gui->participantes->value());
 			//Criação vector;
-			for (int i=1; i<max+1; ++i){
-				array.push_back(i);
-			}
+				for (int i=1; i<max+1; ++i){
+					gui->array.push_back(i);
+				}
 			//gerar ordem aleatoria
-			random_shuffle(array.begin(), array.end());
+				random_shuffle(gui->array.begin(), gui->array.end());
 			//mostra o primeiro valor da lista
-			gui->resultado->copy_label(to_string(array[gui->flag]).c_str());
-			gui->nGanhador->copy_label(to_string(gui->flag+1).c_str());
-			gui->flag++;
-		}
-		else{
+				gui->resultado->copy_label(to_string(gui->array[gui->flag]).c_str());
+				gui->nGanhador->copy_label(to_string(gui->flag+1).c_str());
+				gui->flag++;
+			}
+			else{
 			//mostra proximos resultados
-			gui->resultado->copy_label(to_string(array[gui->flag]).c_str());
-			gui->nGanhador->copy_label(to_string(gui->flag+1).c_str());
-			gui->flag++;
-		}
+				gui->resultado->copy_label(to_string(gui->array[gui->flag]).c_str());
+				gui->nGanhador->copy_label(to_string(gui->flag+1).c_str());
+				gui->flag++;
+			}
 		// bloqueia sortear se chegar ao final de participantes
-		if(gui->flag == stoi(gui->participantes->value())){
-			gui->sortear->deactivate();
-		}
+			if(gui->flag == stoi(gui->participantes->value())){
+				gui->sortear->deactivate();
+			}
 	}// se nao possui valor no input e clicado no sortear
 	catch (std::invalid_argument&) {
 		fl_alert("Informe o número de participantes.");
