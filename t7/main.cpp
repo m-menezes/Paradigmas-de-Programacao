@@ -71,7 +71,7 @@ public:
 		if(gui->flag == stoi(gui->participantes->value())){
 			gui->sortear->deactivate();
 		}
-	}
+	}// se nao possui valor no input e clicado no sortear
 	catch (std::invalid_argument&) {
 		fl_alert("Informe o número de participantes.");
 	}
